@@ -1,4 +1,4 @@
 # Segundo Trabalho computacional de MC
 
-## TODO:
- * Everything
+## DONE:
+ * Programa e gráfico da I.
