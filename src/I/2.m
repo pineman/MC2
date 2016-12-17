@@ -16,24 +16,28 @@ x_range = 0.050:0.01:0.350;
 
 % Desenhar vários gráficos
 hold on;
-xlabel("X");
-ylabel("Y");
-title("1.2.- Comparação de critérios de aproximação");
+xlabel('X');
+ylabel('Y');
 grid on;
 
 % Desenhar pontos tabelados
-plot(X, Y, 'o;Pontos tabelados;', 'color', 'black', 'markerfacecolor', 'black');
+plot(X, Y, 'o;Pontos tabelados;', 'color', 'black', 'markerfacecolor', 'black', 'markersize', 6);
 
 % i) Aproximação linear pelo critério clássico.
-run("2_i.m");
+run('2_i.m');
 plot(x_range, i(x_range, ci), ';i) Linear clássica;', 'color', 'red', 'linewidth', 2);
 
 % ii) Aproximação quadrática pelo critério clássico.
-run("2_ii.m");
-plot(x_range, i(x_range, cii), ';ii) Quadrática clássica;', 'color', [0, 0.7882, 0.1674], 'linewidth', 1);
+run('2_ii.m');
+plot(x_range, i(x_range, cii), ';ii) Quadrática clássica;', 'color', [0, 0.7882, 0.1674], 'linewidth', 2);
 
 % iii) Aproximação linear pelo critério dos mínimos quadrados ponderados.
-run("2_iii.m");
+run('2_iii.m');
 plot(x_range, iii(x_range, ciii), ';iii) Linear ponderada;', 'color', 'blue', 'linewidth', 2);
 
-legend('location', 'southeast');
+l = legend('location', 'northwest');
+legend boxon;
+fontsize=15;
+set(l, 'FontSize', 13);
+set(l, 'color', 'w');
+set([gca; findall(gca, 'Type','text')], 'FontSize', fontsize);

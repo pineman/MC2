@@ -30,5 +30,5 @@ function c = min_quad(X, Y, PESOS, PHIS)
 	y = Y;
 
 	% c = ((BᵀWB)^-1)BᵀWy
-	c = inv(Bt * W * B) * (Bt * W * y);
+	c = (Bt * W * B) \ (Bt * W * y);
 end

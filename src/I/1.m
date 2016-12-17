@@ -9,18 +9,6 @@
 	- O vetor coluna de pesos para cada par (X, Y)
 %}
 
-% Definição das m funções de base
-function y = phi1(x)
-	y = (x - 1);
-end
-
-function y = phi2(x)
-	y = (x - 1).^2;
-end
-
-% Lista de m funções base
-PHIS = {@phi1, @phi2};
-
 %{
 As seguintes três variáveis representam vetores coluna com os
 pontos conhecidos do problema.
@@ -36,6 +24,18 @@ Y = [-2.0; -2.0; 0; 28.0];
 
 % Pesos para cada par (X, Y)
 PESOS = [1; 1; 1; 1];
+
+% Definição das m funções de base
+function y = phi1(x)
+	y = (x - 1);
+end
+
+function y = phi2(x)
+	y = (x - 1).^2;
+end
+
+% Lista de m funções base
+PHIS = {@phi1, @phi2};
 
 % Finalmente, chamar a função min_quad() para resolver o problema.
 c = min_quad(X, Y, PESOS, PHIS)
