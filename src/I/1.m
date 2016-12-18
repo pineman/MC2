@@ -38,4 +38,8 @@ end
 PHIS = {@phi1, @phi2};
 
 % Finalmente, chamar a função min_quad() para resolver o problema.
-c = min_quad(X, Y, PESOS, PHIS)
+c = min_quad(X, Y, PESOS, PHIS);
+disp('Os parâmetros de ajuste de cada função de base são:');
+for i = 1:length(c)
+	printf('\tc%d: %f\n', i - 1, c(i));
+end

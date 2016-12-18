@@ -2,7 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
-\usepackage[margin=3cm]{geometry}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage{lmodern}
 
 \usepackage{graphicx}
@@ -59,18 +59,41 @@
 \begin{document}
 \includepdf[pages={1}]{capa/capa.pdf}
 
+% Secções em números romanos.
+\renewcommand{\thesection}{\Roman{section}}
+
 \tableofcontents
 \newpage
 
-\section{hello}
-hi!
+\section{}
+	\subsection{}
+	\label{sec:I.1}
+	\par
+	Resposta no ficheiro \texttt{min\tu quad.m}, corrido pelo \emph{script} \texttt{1.m}, onde é possível alterar os pontos tabelados, os respetivos pesos e as funções de base.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.70\linewidth]{l}
-	\caption{Fluxograma principal do programa (função \texttt{main()}).}
-	\label{geral}
-\end{figure}
+	\subsection{}
+	\par
+	Para os dados tabelados:
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+			\hline
+			$1/e$	& 0.345	& 0.287	& 0.251	& 0.225	& 0.207	& 0.186	& 0.161	& 0.132	& 0.084	& 0.060	\\ \hline
+			$s$		& 367	& 311	& 295	& 268	& 253	& 239	& 220	& 213	& 192	& 192	\\ \hline
+			$d$		& 17	& 9		& 9		& 7		& 7		& 6		& 6		& 6		& 5		& 5		\\ \hline
+		\end{tabular}
+		\caption{Dados tabelados.}
+	\end{table}
+
+	\par
+	Foram obtidas as três funções aproximadoras pedidas, através da função desenvolvida em \ref{sec:I.1}, pelos ficheiros \texttt{2\tu i.m}, \texttt{2\tu ii.m} e \texttt{2\tu iii.m}, corridos no \emph{script} \texttt{2.m}.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.80\linewidth]{l}
+		\captionsetup{width=0.80\linewidth}
+		\caption{Diferentes funções aproximadoras dos pontos tabelados pelo critério dos mínimos quadrados clássico e ponderado.}
+	\end{figure}
 
 
 \end{document}
