@@ -62,6 +62,8 @@
 
 % Secções em números romanos.
 \renewcommand{\thesection}{\Roman{section}}
+% Subsubsecções no estilo (a), (b), ...
+\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
 
 \tableofcontents
 \newpage
@@ -70,7 +72,7 @@
 	\subsection{}
 	\label{sec:I.1}
 	\par
-	Resposta no ficheiro \texttt{min\tu quad.m}, corrido pelo \emph{script} \texttt{1.m}, onde é possível alterar os pontos tabelados, os respetivos pesos e as funções de base.
+	Resposta no ficheiro \texttt{I/min\tu quad.m}, corrido pelo \emph{script} \texttt{I/1.m}, onde é possível alterar os pontos tabelados, os respetivos pesos e as funções de base.
 
 	\subsection{}
 	\par
@@ -87,7 +89,7 @@
 	\end{table}
 
 	\par
-	Foram obtidas as três funções aproximadoras pedidas, através da função desenvolvida em \ref{sec:I.1}, pelos ficheiros \texttt{2\tu i.m}, \texttt{2\tu ii.m} e \texttt{2\tu iii.m}, corridos no \emph{script} \texttt{2.m}.
+	Foram obtidas as três funções aproximadoras pedidas, através da função desenvolvida em \ref{sec:I.1}, pelos ficheiros \texttt{I/2\tu i.m}, \texttt{I/2\tu ii.m} e \texttt{I/2\tu iii.m}, corridos no \emph{script} \texttt{I/2.m}.
 
 	\begin{figure}[H]
 		\centering
@@ -96,10 +98,40 @@
 		\caption{Diferentes funções aproximadoras dos pontos tabelados pelo critério dos mínimos quadrados clássico e ponderado.}
 	\end{figure}
 
+\newpage
 
 \section{}
-	subsection{}
+	\subsection{}
 	\par
+	Resposta no ficheiro \texttt{II/simpson.m}, corrido pelo \emph{script} \texttt{II/1.m}, onde é possível alterar o intervalo de integração, o número de subintervalos e a função a integrar.
 
+	\subsection{}
+	\subsubsection{}
+	\par
+	Correndo o programa \texttt{II/2.m}, obtém-se:
+	$$F =  1480.56848008215$$
+
+	\subsubsection{}
+	\par
+	Correndo o programa \texttt{II/2.m}, obtém-se:
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			$n$	& $S_n$				& $|F - S_n|$		& $\frac{|F - S_n/2|}{|F - S_n|}$ \\ \hline
+			2	& 1219.63999486000	& 260.92848522216	& -					\\ \hline
+			4	& 1426.86928844946	& 53.69919163269	& 4.85907659480		\\ \hline
+			8	& 1473.14779849473	& 7.42068158743		& 7.23642309672		\\ \hline
+			16	& 1479.85678890922	& 0.71169117293		& 10.42682819413	\\ \hline
+			32	& 1480.51545319880	& 0.05302688335		& 13.42132759730	\\ \hline
+			64	& 1480.56497529815	& 0.00350478401		& 15.12985771736	\\ \hline
+			128	& 1480.56825767195	& 0.00022241020		& 15.75819799559	\\ \hline
+			256	& 1480.56846613061	& 0.00001395154		& 15.94162455869	\\ \hline
+			512	& 1480.56847921284	& 0.00000086931		& 16.04897985126	\\ \hline
+		\end{tabular}
+		\caption{Comparação dos erros da regra de Simpson para vários valores de N.}
+	\end{table}
+
+	% TODO: comentar os erros
 
 \end{document}
