@@ -2,3 +2,4 @@
 
 ## DONE:
  * Exercício I.
+ * Programa para o II.
