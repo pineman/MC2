@@ -1,5 +1,5 @@
 %{
-1.1.- Método dos mínimos quadrados com pesos.
+I.1.- Método dos mínimos quadrados ponderados.
 
 É necessário ajustar os parâmetros de entrada:
 	- As funções de base
@@ -9,6 +9,8 @@
 	- O vetor coluna de pesos para cada par (X, Y)
 %}
 
+format long;
+
 %{
 As seguintes três variáveis representam vetores coluna com os
 pontos conhecidos do problema.
@@ -16,22 +18,25 @@ pontos conhecidos do problema.
 Estes vetores são de dimensão n x 1, onde n é o número de pontos
 conhecidos.
 %}
+
+
+% Os valores utilizados correspondem ao exemplo 4.5 na sebenta da disciplina.
 % Coordenadas X dos pontos conhecidos
-X = [-1; 0; 1; 5];
+X = [2; 4; 6; 8];
 
 % Coordenadas Y dos pontos conhecidos
-Y = [-2.0; -2.0; 0; 28.0];
+Y = [2; 11; 28; 40];
 
 % Pesos para cada par (X, Y)
 PESOS = [1; 1; 1; 1];
 
 % Definição das m funções de base
 function y = phi1(x)
-	y = (x - 1);
+	y = 1;
 end
 
 function y = phi2(x)
-	y = (x - 1).^2;
+	y = x;
 end
 
 % Lista de m funções base

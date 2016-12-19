@@ -1,9 +1,11 @@
 %{
-1.2.- Gráfico de três critérios de aproximação:
+I.2.- Gráfico de três critérios de aproximação:
 		i) Aproximação linear pelo critério clássico.
 		ii) Aproximação quadrática pelo critério clássico.
 		iii) Aproximação linear pelo critério dos mínimos quadrados ponderados.
 %}
+
+format long;
 
 % Coordenadas X dos pontos tabelados
 X = [0.345; 0.287; 0.251; 0.225; 0.207; 0.186; 0.161; 0.132; 0.084; 0.060];
