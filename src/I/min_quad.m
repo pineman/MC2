@@ -29,7 +29,8 @@ function c = min_quad(X, Y, PESOS, PHIS)
 		end
 	end
 	Bt = transpose(B);
-	% Matrix identidade de ordem n multiplicada pelo vetor coluna dos pesos.
+	% Matrix identidade de ordem n multiplicada pelo vetor coluna dos pesos,
+	% elemento a elemento.
 	W = eye(n) .* PESOS;
 	y = Y;
 

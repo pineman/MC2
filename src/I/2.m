@@ -14,7 +14,7 @@ X = [0.345; 0.287; 0.251; 0.225; 0.207; 0.186; 0.161; 0.132; 0.084; 0.060];
 Y = [367; 311; 295; 268; 253; 239; 220; 213; 193; 192];
 
 % Intervalo de x apropriado para os dados X
-x_range = 0.050:0.01:0.350;
+x_range = linspace(0.050, 0.350, 10000);
 
 % Desenhar vários gráficos
 hold on;
@@ -31,7 +31,7 @@ plot(x_range, i(x_range, ci), ';i) Linear clássica;', 'color', 'red', 'linewidt
 
 % ii) Aproximação quadrática pelo critério clássico.
 run('2_ii.m');
-plot(x_range, i(x_range, cii), ';ii) Quadrática clássica;', 'color', [0, 0.7882, 0.1674], 'linewidth', 2);
+plot(x_range, ii(x_range, cii), ';ii) Quadrática clássica;', 'color', [0, 0.7882, 0.1674], 'linewidth', 2);
 
 % iii) Aproximação linear pelo critério dos mínimos quadrados ponderados.
 run('2_iii.m');

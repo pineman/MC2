@@ -26,5 +26,7 @@ cii = min_quad(X, Y, PESOS, PHIS);
 
 % Definir função aproximada (quadrática)
 function y = ii(x, cii)
-	y = cii(1).*x^2 + cii(2).*x + cii(3);
+	y = cii(1)*x.^2 + cii(2)*x + cii(3);
+	% .^ porque o argumento x pode ser uma matrix: queremos o quadrado
+	% de cada entrada e não o quadrado da matrix.
 end

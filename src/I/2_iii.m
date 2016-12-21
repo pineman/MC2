@@ -11,7 +11,7 @@ function y = phi2(x)
 	y = 1;
 end
 
-% Lista de m funções base
+% Lista de m funções de base
 PHIS = {@phi1, @phi2};
 
 % Pesos para cada par (X, Y)
@@ -25,5 +25,5 @@ ciii = min_quad(X, Y, PESOS, PHIS);
 
 % Definir função aproximada (linear)
 function y = iii(x, ciii)
-	y = ciii(1).*x + ciii(2);
+	y = ciii(1)*x + ciii(2);
 end

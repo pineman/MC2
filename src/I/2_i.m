@@ -22,5 +22,5 @@ ci = min_quad(X, Y, PESOS, PHIS);
 
 % Definir função aproximada (linear)
 function y = i(x, ci)
-	y = ci(1).*x + ci(2);
+	y = ci(1)*x + ci(2);
 end
