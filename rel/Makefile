@@ -2,6 +2,8 @@ TEX=pdflatex
 
 make:
 	cd ./capa && $(TEX) capa.tex
+	cd ./capa && $(TEX) capa.tex
+	$(TEX) rel.tex
 	$(TEX) rel.tex
 
 clean:
