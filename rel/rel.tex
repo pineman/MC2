@@ -156,8 +156,7 @@
 		podemos concluir que há um único zero no intervalo $[0, 200]$.
 		\par
 		Dividindo a segunda equação pela primeira, obtemos:
-		%já tinhas começado as tais continhas (1)
-		% Equações
+		% completar as Equações
 
 		\begin{equation} \label{di}
 			\frac{dI}{dS} = -1 + \frac{300}{s} \Leftrightarrow \\
@@ -212,13 +211,48 @@
 
 		\subsubsection{}
 		\par
-		c, a última pergunta.
-		%tenho aqui um flowchart bonitinho de como fizemos a coisa.
-		%Antes de me pisgar para o norte deixo uma fotografia de um
-		%flowchar bonitinho e legível. Também ainda acabo decentemente
-		%estes discursos todos e explico o flowchart.
-		%Também não me importava nada de comentar o gráfico que obtivemos
-		%Volto a pegar nisto la para as 22 de hoje.
-
+		
+		Utilizando a expressão $I(t) = -S(t) + 300 ln S(t) + c$ e substituindo
+		os $I$ pelo lado direito da equação, obteremos uma equação na forma de um 
+		PVI. A partir daí podemos usar o método do ponto médio para calcular aproximações $y_0$, $y_1$, ..., $y_N$ dos pontos
+		$x_0$ = 0, $x_1$ = $x_0 + h$, ... $x_N= nh$ e desenhar o gráfico de acordo com esses pontos.
+		
+		Para obtermos um gráfico para o número de pessoas infetadas ao longo do tempo, usamos os nossos
+		pontos já cálculados.
+		Como I pode ser escrito em função de S ->
+		I($x_i$) = -S($x_i$) + 300 * ln(S($x_i$) - 1205.
+		
+		Assim, para cada momento podemos saber uma aproximação do número de pessoas infetadas. E obtemos assim
+		o gráfico da função I(t).
+		
+		Finalmente, para se conseguir fazer o gráfico de R foi necessário dividir a 3ª equação pela primeira e integrar:
+		%contas, parecidas com a integração feita no 2-a. (escrevi a caneta nas folhas do freitas, mas já tinhamos feito igual)
+		
+		Ficamos com uma relação entre R(t) e S(t). Como temos aproximações para os S(t), 
+		é-nos suficiente substituir as aproximações na expressão obtida e, assim, obter uma aproximação para R(t).
+		
+		Juntando os três gráficos:
+		%gráfico(falta a imagem do gráfico freitas... fizeste push disso? :P)
+		
+		
+		Relacionando o gráfico com o problema em questão, notamos que as aproximações feitas devem estar
+		bastante próximas do valor certo/real de cada função, pois os gráficos comportaram-se e cumpriram as respetivas propriedades.
+		
+		
+		%estou só a experimentar este itemize
+		\begin{itemize}
+		\item Como o limite superior de pessoas da amostra é 800, nenhuma função tem uma imagem acima de 800.
+		\item O valor máximo para o número de pessoas infetadas num dado momento é 200 e tal pode-se confirmar pelo gráfico.
+		\item Foi visto na pergunta $II.2-b)$ que o número de pessoas nunca infetadas é algo perto de 70. %verificar que é 70 certo ou nao...
+		No gráfico, pode observar-se que Quando I(t) = 0, S(t) $\approx$ 70 e que fica constante nesse valor a partir do instante em que I(t) = 0.
+		Faz todo o sentido ser constante a partir desse momento, porque quando se recupera a última pessoa infetada, deixa de haver probabilidades
+		de se contrair varicela e a partir daí o número de pessoas suscetíveis, isto é, que nunca contrairam varicela, é constante.
+		\item Em termos de interpretação do problema, o formato do gráfico da função das pessoas recuperadas assenta nas interpretações
+		feitas sobre o problema.
+		Se deixam de haver infetados a partir de determinado momento, 
+		também a partir desse momento deveriam parar de haver recuperados.
+		Além disso, o número de recuperados nunca deve diminuir pois estes nunca mais voltam a ser infetados. A varicela é assim.
+		\end{itemize}
+		
 
 \end{document}
