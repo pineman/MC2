@@ -31,7 +31,6 @@
 	linkcolor=black,
 	urlcolor=blue
 }
-
 \newcommand\showdiv[1]{\overline{\smash{\hstretch{.5}{)}\mkern-3.2mu\hstretch{.5}{)}}#1}}
 \newcommand\ph[1]{\textcolor{white}{#1}}
 \newcommand\tu[0]{\textunderscore}
@@ -57,13 +56,19 @@
 
 \usepackage{pdfpages}
 
+%center sections
+%http://tex.stackexchange.com/a/107282
+\usepackage{sectsty}
+\sectionfont{\centering}
+
 \begin{document}
 \includepdf[pages={1}]{capa/capa.pdf}
 
 % Secções em números romanos.
 \renewcommand{\thesection}{\Roman{section}}
 % Subsubsecções no estilo (a), (b), ...
-\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\alph{subsubsection})}
 
 \tableofcontents
 \newpage
@@ -158,15 +163,16 @@
 		Dividindo a segunda equação pela primeira, obtemos:
 		%já tinhas começado as tais continhas (1)
 		% Equações
-
 		\begin{equation} \label{di}
 		\begin{split}
-			\frac{dI}{dS} = -1 + \frac{300}{s} \Leftrightarrow \\
-			dI = ( -1 + \frac{300}{s})ds \Leftrightarrow \\
-			\frac{dI}{dt} dt = (-1 + \frac{300}{s} \frac{dS}{dt} dt
+			& \frac{dI}{dS} = -1 + \frac{300}{s}
+			\Leftrightarrow dI = \left(-1 + \frac{300}{s}\right)dS   \\ 
+			& \Leftrightarrow \frac{dI}{dt} dt = \left( -1 + \frac{300}{s}\right) \frac{dS}{dt} dt \\ 
+			& \Leftrightarrow \int\frac{dI}{dt}dt = \int\left(\frac{-1 + 300}{s}\right)\frac{dS}{dt}dt =
+			\int - \frac{ds}{dt}dt + \int\frac{300}{s}\frac{dS}{dt}dt \\
+			& \Leftrightarrow I(t) = -S(t) + 300*log(S(t)) \\
 		\end{split}
 		\end{equation}
-
 
 		Expressando $I(t)$ em função de $S(t)$, chegamos à equação que
 		%aqui aquela que é para concluir)
