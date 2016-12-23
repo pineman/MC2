@@ -170,16 +170,16 @@
 			& \Leftrightarrow \frac{dI}{dt} dt = \left( -1 + \frac{300}{s}\right) \frac{dS}{dt} dt \\ 
 			& \Leftrightarrow \int\frac{dI}{dt}dt = \int\left(\frac{-1 + 300}{s}\right)\frac{dS}{dt}dt =
 			\int - \frac{ds}{dt}dt + \int\frac{300}{s}\frac{dS}{dt}dt \\
-			& \Leftrightarrow I(t) = -S(t) + 300*log(S(t)) \\
+			& \Leftrightarrow I(t) = -S(t) + 300 \times ln(S(t)) \\
 		\end{split}
 		\end{equation}
 
-		Expressando $I(t)$ em função de $S(t)$, chegamos à equação que
-		%aqui aquela que é para concluir)
-
-		Impondo as condições iniciais:
+		Expressando $I(t)$ em função de $S(t)$, chega-se assim à equação pretendida:
+        $$I(S) = -S + 300 ln S + c$$
+        
+		Para chegar ao valor de c, impõem-se então as condições iniciais $I(0) = 1$ e $S(0) = 799$:
 		%isto mas menos cancerígeno:
-		$$I(0) = -S(0) + 300* ln(S(0)) + c <=> c = bla bla bla$$
+		$$I(0) = -S(0) + 300 \times ln(S(0)) + c \Leftrightarrow c \approx -1205.008$$
 
 
 		O número máximo de crianças doentes num dado momento pode ser obtido
@@ -188,7 +188,7 @@
 		Temos, portanto, um máximo em $S = 300$, que é também o máximo de $I(S)$ e que é
 		o número de crianças suscetíveis quando o número de crianças infetadas é máximo.
 		Substituindo na equação, obtemos:
-		%Freitas... :)
+		$$I(300) = -300 + 300 \times ln(300) - 1205.008 \Leftrightarrow I(300) \approx 206 $$
 
 		\subsubsection{}
 		\par
@@ -211,13 +211,14 @@
 		já tinha tudo implementado.
 
 		%consegues por + bonito:
-		Quere-se um S tal que I(S) = 0 => S = I\^-1(0).
+        % o que é que é suposto ser o \^ ?
+		Quer-se um S tal que I(S) = 0 $\rightarrow$ S = I\^-1(0).
 		A interpolação inversa consiste em aproximar a função inversa através de polinómios.
 		Ao fazer-se isto, espera-se depois conseguir encontrar uma aproximação
 		para a imagem de I\^-1(0), 
 		que será o S que nós procuramos.
 		\par
-		Depois de utilizarmos as duas funções, concluímos que I\^-1(0) ~= 70.
+		Depois de utilizarmos as duas funções, concluímos que I\^-1(0) = 70.
 		
 		\subsubsection{}
 		\par
@@ -229,10 +230,10 @@
 		
 		Para obtermos um gráfico para o número de pessoas infetadas ao longo do tempo, usamos os nossos
 		pontos já cálculados.
-		Como I pode ser escrito em função de S ->
-		I($x_i$) = -S($x_i$) + 300 * ln(S($x_i$) - 1205.
+		Como I pode ser escrito em função de S $\rightarrow$
+		I($x_i$) = -S($x_i$) + 300 $\times$ ln(S($x_i$) - 1205.
 		
-		Assim, para cada momento podemos saber uma aproximação do número de pessoas infetadas. E obtemos assim
+		Assim, para cada momento podemos saber uma aproximação do número de pessoas infetadas, obtendo-se assim
 		o gráfico da função I(t).
 		
 		Finalmente, para se conseguir fazer o gráfico de R foi necessário dividir a 3ª equação pela primeira e integrar:
@@ -246,7 +247,7 @@
 		
 		
 		Relacionando o gráfico com o problema em questão, notamos que as aproximações feitas devem estar
-		bastante próximas do valor certo/real de cada função, pois os gráficos comportaram-se e cumpriram as respetivas propriedades.
+		bastante próximas do valor certo/real de cada função, pois os gráficos comportaram-se como esperado e cumpriram as respetivas propriedades.
 		
 		
 		%estou só a experimentar este itemize
@@ -258,10 +259,9 @@
 		Faz todo o sentido ser constante a partir desse momento, porque quando se recupera a última pessoa infetada, deixa de haver probabilidades
 		de se contrair varicela e a partir daí o número de pessoas suscetíveis, isto é, que nunca contrairam varicela, é constante.
 		\item Em termos de interpretação do problema, o formato do gráfico da função das pessoas recuperadas assenta nas interpretações
-		feitas sobre o problema.
-		Se deixam de haver infetados a partir de determinado momento, 
+		feitas sobre o problema. Se deixam de haver infetados a partir de determinado momento, 
 		também a partir desse momento deveriam parar de haver recuperados.
-		Além disso, o número de recuperados nunca deve diminuir pois estes nunca mais voltam a ser infetados. A varicela é assim.
+		Além disso, como é indicado no enunciado que a doença representada pelo modelo matemático é a varicela, sabe-se que o número de recuperados nunca deve diminuir pois estes nunca mais voltam a ser infetados.
 		\end{itemize}
 		
 		\begin{figure}[H]
