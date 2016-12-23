@@ -1,28 +1,17 @@
 %ponto medio
-% [a, b] intervalo onde vai ser aplicado o metodo
+% [a, b] intervalo no qual o metodo vai ser aplicado
+% y0 - aproximação inicial
+% n - numero de subintervalos do intervalo [a, b]
 % f - função à qual o metodo é aplicado
-% y - aproximação inicial
-% n - numero de subintervalos no intervalo [a, b] a considerar
 
-function z=ponto_medio(a, b, f, y, n)
-    % Aplicar a formula do ponto medio n vezes 
-    % (para cada intervalo i)
-    % 
-    % usar t_i = a + i*h
-    
-    h = (b-a)/n;
-    t = a;
-    
-    sol = zeros(1, n);
-    
-    sol(1) = y;
-    for i = 1:n-1
-        sol(i+1) = sol(i) + h * f(t + h/2, sol(i) * f(t, sol(i)));
-        t += h; 
-    endfor
-   
-    z = sol;   
-        
-        
-    
+function y = ponto_medio(a, b, y0, n, f)
+
+  h = (b-a)/n;	%tamanho da cada subintervalo
+  y = [y0];
+
+  % Calcular a aproximação da função em cada intervalo
+  for i = a:h:(b-h)
+	y_i = (y(end) + h * f(i + h/2, y(end) + h/2*f(i, y(end))));
+    y = [y y_i];
+  endfor
 endfunction
