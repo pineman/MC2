@@ -7,7 +7,7 @@
 \usepackage{lmodern}
 
 \usepackage{graphicx}
-\graphicspath{ {imagens/} }
+\graphicspath{{imagens/}}
 \usepackage{wrapfig,lipsum}
 \usepackage{bold-extra}
 \usepackage{epstopdf}
@@ -24,13 +24,11 @@
 \usepackage{textcomp}
 \usepackage{caption}
 \usepackage{hyperref}
-\hypersetup{
-	colorlinks,
-	citecolor=black,
-	filecolor=black,
-	linkcolor=black,
-	urlcolor=blue
-}
+\hypersetup{colorlinks,
+			citecolor=black,
+			filecolor=black,
+			linkcolor=black,
+			urlcolor=blue}
 \newcommand\showdiv[1]{\overline{\smash{\hstretch{.5}{)}\mkern-3.2mu\hstretch{.5}{)}}#1}}
 \newcommand\ph[1]{\textcolor{white}{#1}}
 \newcommand\tu[0]{\textunderscore}
@@ -94,7 +92,8 @@
 	\end{table}
 
 	\par
-	Foram obtidas as três funções aproximadoras pedidas, através da função desenvolvida em \ref{sec:I.1}, pelos ficheiros \texttt{I/2\tu i.m}, \texttt{I/2\tu ii.m} e \texttt{I/2\tu iii.m}, corridos no \emph{script} \texttt{I/2.m}.
+	Foram obtidas as três funções aproximadoras pedidas, através da função
+	desenvolvida em \ref{sec:I.1}, pelos ficheiros \texttt{I/2\tu i.m}, \texttt{I/2\tu ii.m} e \texttt{I/2\tu iii.m}, corridos no \emph{script} \texttt{I/2.m}.
 
 	\begin{figure}[H]
 		\centering
@@ -158,8 +157,8 @@
 		\begin{equation} \label{di}
 		\begin{split}
 			& \frac{dI}{dS} = -1 + \frac{300}{s}
-			\Leftrightarrow dI = \left(-1 + \frac{300}{s}\right)dS   \\ 
-			& \Leftrightarrow \frac{dI}{dt} dt = \left( -1 + \frac{300}{s}\right) \frac{dS}{dt} dt \\ 
+			\Leftrightarrow dI = \left(-1 + \frac{300}{s}\right)dS
+			 \Leftrightarrow \frac{dI}{dt} dt = \left( -1 + \frac{300}{s}\right) \frac{dS}{dt} dt \\ 
 			& \Leftrightarrow \int\frac{dI}{dt}dt = \int\left(\frac{-1 + 300}{s}\right)\frac{dS}{dt}dt =
 			\int - \frac{ds}{dt}dt + \int\frac{300}{s}\frac{dS}{dt}dt \\
 			& \Leftrightarrow I(t) = -S(t) + 300 \times ln(S(t)) \\
@@ -182,7 +181,7 @@
 
 
 		O número máximo de crianças doentes num dado momento pode ser obtido
-		atráves do máximo de $I(S)$. 
+		atráves do máximo de $I(S)$.
 		\begin{equation}
 			\label{eq:root}
 			\frac{dI}{dS} = 0 \Leftrightarrow -1 + \frac{300}{S} = 0
@@ -228,7 +227,7 @@
 		existência acabamos de provar. Essa raiz será igual ao número de
 		crianças não afetadas pela epidemia.
 		Para encontrar essa raiz iremos	interpolar a função inversa de $I$. \\
-		\begin{equation} 
+		\begin{equation}
 			I(S) = 0 \rightarrow S = I^{-1}(0)
 		\end{equation}
 		\par O seu cálculo pode ser simplificado
@@ -277,27 +276,56 @@
 		\par
 
 		Utilizando a expressão $I(t) = -S(t) + 300 ln S(t) + c$ e substituindo
-		os $I$ pelo lado direito da equação, obteremos uma equação na forma de um
-		PVI. A partir daí podemos usar o método do ponto médio para calcular aproximações $y_0$, $y_1$, ..., $y_N$ dos pontos
-		$x_0$ = 0, $x_1$ = $x_0 + h$, ... $x_N= nh$ e desenhar o gráfico de acordo com esses pontos.
+		os $I$ pelo lado direito da equação, obteremos uma equação na forma de
+		um PVI\@. A partir daí podemos usar o método do ponto médio\footnote{A
+		implementação pode ser encontrada em \texttt{III/ponto\tu medio.m}}
+		para calcular aproximações $y_0$, $y_1$, \ldots, $y_N$ dos pontos $x_0$
+		= 0, $x_1$ = $x_0 + h$, \ldots $x_N= nh$ e desenhar o gráfico de acordo
+		com esses pontos.
 
-		Para obtermos um gráfico para o número de pessoas infetadas ao longo do tempo, usamos os nossos
-		pontos já cálculados.
-		Como I pode ser escrito em função de S $\rightarrow$
-		I($x_i$) = -S($x_i$) + 300 $\times$ ln(S($x_i$) - 1205.
+		Para obtermos um gráfico para o número de pessoas infetadas ao longo do
+		tempo, usamos os nossos pontos já cálculados.
+		Como I pode ser escrito em função de S $\rightarrow$ I($x_i$) =
+		-S($x_i$) + 300 $\times$ ln(S($x_i$) - 1205.
 
-		Assim, para cada momento podemos saber uma aproximação do número de pessoas infetadas, obtendo-se assim
-		o gráfico da função I(t).
+		Assim, para cada momento podemos saber uma aproximação do número de
+		pessoas infetadas, obtendo-se assim	o gráfico da função I(t).
 
-		Finalmente, para se conseguir fazer o gráfico de R foi necessário dividir a 3ª equação pela primeira e integrar:
-		%contas, parecidas com a integração feita no 2-a. (escrevi a caneta nas folhas do freitas, mas já tinhamos feito igual)
+		Finalmente, para se conseguir fazer o gráfico de R foi necessário
+		dividir a 3ª equação pela primeira e integrar:
+		\begin{equation}
+		\begin{split}
+			\frac{\frac{dR}{dt}}{\frac{dS}{dt}} = \frac{0.3 I}{-0.0001 S I}
+			\Leftrightarrow
+			\frac{dR}{dS} = &-\frac{300}{s} \Leftrightarrow dR =
+			-\frac{300}{s} dS
+			\int \frac{dR}{dt}dt = \int -\frac{300}{s} \frac{dS}{dt}dt
+			\Leftrightarrow \\ \newline
+			& R(t) = -300 ln(S(t)) + c
+		\end{split}
+		\end{equation}
+
+		\begin{equation}
+			0 = -300 ln(799) + c \Leftrightarrow \\
+			c = 2005.008 \\
+		\end{equation}
+
+		\begin{equation}
+			R(t) = -300\, ln(S(t)) + 2005.008
+		\end{equation}
+
 
 		Ficamos com uma relação entre R(t) e S(t). Como temos aproximações para os S(t),
 		é-nos suficiente substituir as aproximações na expressão obtida e, assim, obter uma aproximação para R(t).
 
 		Juntando os três gráficos:
-		%gráfico(falta a imagem do gráfico freitas... fizeste push disso? :P)
 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.80\linewidth]{IIIc_fitted}
+			\captionsetup{width=0.80\linewidth}
+			\caption{Evolução das funções S, I, R ao longo do tempo}
+		\end{figure}
 
 		Relacionando o gráfico com o problema em questão, notamos que as aproximações feitas devem estar
 		bastante próximas do valor certo/real de cada função, pois os gráficos comportaram-se como esperado e cumpriram as respetivas propriedades.
@@ -308,20 +336,14 @@
 		\item Como o limite superior de pessoas da amostra é 800, nenhuma função tem uma imagem acima de 800.
 		\item O valor máximo para o número de pessoas infetadas num dado momento é 206 e tal pode-se confirmar pelo gráfico.
 		\item Foi visto na pergunta $II.2-b)$ que o número de pessoas nunca infetadas é algo perto de 70. %verificar que é 70 certo ou nao...
-		No gráfico, pode observar-se que Quando I(t) = 0, S(t) $\approx$ 70 e que fica constante nesse valor a partir do instante em que I(t) = 0.
-		Faz todo o sentido ser constante a partir desse momento, porque quando se recupera a última pessoa infetada, deixa de haver probabilidades
-		de se contrair varicela e a partir daí o número de pessoas suscetíveis, isto é, que nunca contrairam varicela, é constante.
+		No gráfico, pode observar-se que Quando I(t) = 0, S(t) $\approx$ 74 e que fica constante nesse valor a partir do instante em que I(t) = 0.
+		Faz todo o sentido ser constante a partir desse momento, porque quando
+		se recupera a última pessoa infetada, deixa de ser possivel contrair
+		varicela e a partir daí o número de pessoas suscetíveis, isto é, que
+		nunca contrairam varicela, não se altera.
 		\item Em termos de interpretação do problema, o formato do gráfico da função das pessoas recuperadas assenta nas interpretações
 		feitas sobre o problema. Se deixam de haver infetados a partir de determinado momento,
-		também a partir desse momento deveriam parar de haver recuperados.
-		Além disso, como é indicado no enunciado que a doença representada pelo modelo matemático é a varicela, sabe-se que o número de recuperados nunca deve diminuir pois estes nunca mais voltam a ser infetados.
+		também a partir desse momento o número de recuperados não se irá
+		alterar.
 		\end{itemize}
-
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.80\linewidth]{IIIc_fitted}
-			\captionsetup{width=0.80\linewidth}
-			\caption{Evolução das funções S, I, R ao longo do tempo}
-		\end{figure}
-
 \end{document}
