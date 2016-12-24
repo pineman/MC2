@@ -1,6 +1,4 @@
-%{
-II.2.- Regra de Simpson composta.
-%}
+%II.2.- Regra de Simpson composta.
 
 format long;
 

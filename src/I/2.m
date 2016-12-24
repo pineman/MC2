@@ -1,9 +1,7 @@
-%{
-I.2.- Gráfico de três critérios de aproximação:
-		i) Aproximação linear pelo critério clássico.
-		ii) Aproximação quadrática pelo critério clássico.
-		iii) Aproximação linear pelo critério dos mínimos quadrados ponderados.
-%}
+%I.2.- Gráfico de três critérios de aproximação:
+%		i) Aproximação linear pelo critério clássico.
+%		ii) Aproximação quadrática pelo critério clássico.
+%		iii) Aproximação linear pelo critério dos mínimos quadrados ponderados.
 
 format long;
 

@@ -39,6 +39,28 @@
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
 
+
+\lstset{frame=tb,
+  language=Octave,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  extendedchars=true,
+  literate=	{á}{{\'a}}1	{ã}{{\~a}}1	{â}{\^{a}}1	{é}{\'{e}}1	{ç}{\c{c}}1
+  			{ã}{\~{a}}1	{à}{\`{a}}1 {ê}{\^{e}}1 {í}{\'{i}}1	{ó}{\'{o}}1
+			{õ}{\~{o}}1 {ô}{\^{o}}1	{ú}{\'{u}}1 {Ç}{\c{C}}1 {É}{\'{E}}1,
+}
+
 % ----- Cabeçalho e rodapé -----
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -324,8 +346,12 @@
 			\centering
 			\includegraphics[width=0.80\linewidth]{IIIc_fitted}
 			\captionsetup{width=0.80\linewidth}
-			\caption{Evolução das funções S, I, R ao longo do tempo}
+			\caption[Caption]{Evolução das funções S, I, R ao longo do tempo
+			\footnotemark}
 		\end{figure}
+
+		\footnotetext{O	código utilizado para gerar o grafico pode ser
+		encontrado na didetoria III/c.m dos anexos.}
 
 		Relacionando o gráfico com o problema em questão, notamos que as aproximações feitas devem estar
 		bastante próximas do valor certo/real de cada função, pois os gráficos comportaram-se como esperado e cumpriram as respetivas propriedades.
@@ -346,4 +372,39 @@
 		também a partir desse momento o número de recuperados não se irá
 		alterar.
 		\end{itemize}
+
+\section{Anexos}
+
+
+\subsection{I}
+	\par{I/1.m}
+	\lstinputlisting{../src/I/1.m}
+	\par{I/2\tu i.m}
+	\lstinputlisting{../src/I/2_i.m}
+	\par{I/2\tu ii.m}
+	\lstinputlisting{../src/I/2_ii.m}
+	\par{I/2\tu ii.m}
+	\lstinputlisting{../src/I/2_ii.m}
+	\par{I/2.m}
+	\lstinputlisting{../src/I/2.m}
+	\par{I/min\tu quad.m}
+	\lstinputlisting{../src/I/min_quad.m}
+\subsection{II}
+	\par{II/1.m}
+	\lstinputlisting{../src/II/1.m}
+	\par{II/2.m}
+	\lstinputlisting{../src/II/2.m}
+	\par{II/ex1.m}
+	\lstinputlisting{../src/II/ex1.m}
+	\par{II/simpson.m}
+	\lstinputlisting{../src/II/simpson.m}
+\subsection{III}
+	\par{III/c.m}
+	\lstinputlisting{../src/III/c.m}
+	\par{III/III\tu b.m}
+	\lstinputlisting{../src/III/III_b.m}
+	\par{III/ponto\tu medio.m}
+	\lstinputlisting{../src/III/ponto_medio.m}
+	\par{III/f.m}
+	\lstinputlisting{../src/III/f.m}
 \end{document}
