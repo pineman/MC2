@@ -86,20 +86,20 @@
 
 % Secções em números romanos.
 \renewcommand{\thesection}{\Roman{section}}
-% Subsubsecções no estilo (a), (b), ...
 \renewcommand{\thesubsection}{\arabic{subsection}.}
+% Subsubsecções no estilo a), b), ...
 \renewcommand{\thesubsubsection}{\alph{subsubsection})}
 
+\renewcommand{\contentsname}{Índice}
 \tableofcontents
 \newpage
 
-\section{}
-	\subsection{}
-	\label{sec:I.1}
+\section{} \label{sec:I}
+	\subsection{} \label{sec:I.1}
 	\par
 	Resposta no ficheiro \texttt{I/min\tu quad.m}, corrido pelo \emph{script} \texttt{I/1.m}, onde é possível alterar os pontos tabelados, os respetivos pesos e as funções de base.
 
-	\subsection{}
+	\subsection{} \label{sec:I.2}
 	\par
 	Para os dados tabelados:
 	\begin{table}[H]
@@ -126,18 +126,18 @@
 
 \newpage
 
-\section{}
-	\subsection{}
+\section{} \label{sec:II}
+	\subsection{} \label{sec:II.1}
 	\par
 	Resposta no ficheiro \texttt{II/simpson.m}, corrido pelo \emph{script} \texttt{II/1.m}, onde é possível alterar o intervalo de integração, o número de subintervalos e a função a integrar.
 
-	\subsection{}
-	\subsubsection{}
+	\subsection{} \label{sec:II.2}
+	\subsubsection{} \label{sec:II.2a)}
 	\par
 	Correndo o programa \texttt{II/2.m}, obtém-se:
 	$$F =  1480.56848008215$$
 
-	\subsubsection{}
+	\subsubsection{} \label{sec:II.2b)}
 	\par
 	Correndo o programa \texttt{II/2.m}, obtém-se:
 	\begin{table}[H]
@@ -162,46 +162,45 @@
 	% a majoração do erro depende de N quarticamente, por isso,
 	% se N duplicar, o erro cai para 1/16.
 
-\section{}
-	\subsection{}
-	\par %III- 1
-	O programa desenvolvido tem o nome de \texttt{ponto\tu medio.m}. Recebe um intervalo
+\section{} \label{sec:III}
+	\subsection{} \label{sec:III.1}
+	\par
+	O programa desenvolvido tem o nome de \texttt{III/ponto\tu medio.m}. Recebe um intervalo
 	$[a,b]$, uma função $f$ desenvolvida à parte, específica para cada problema de valor inicial,
 	uma condição inicial $ y_\alpha $ e um número $n$ de subintervalos.
 
-	\subsection{}
-		\subsubsection{}
+	\subsection{} \label{sec:III.2}
+		\subsubsection{} \label{sec:III.2a)}
 		\par %III- 2
-		\par
-		Dividindo a $\frac{dI}{dt}$ por $\frac{dS}{dt}$, obtemos:
+		Dividindo $\frac{dI}{dt}$ por $\frac{dS}{dt}$, obtemos:
 
 		% completar as Equações
 		\begin{equation} \label{di}
 		\begin{split}
-			& \frac{dI}{dS} = -1 + \frac{300}{s}
-			\Leftrightarrow dI = \left(-1 + \frac{300}{s}\right)dS
-			 \Leftrightarrow \frac{dI}{dt} dt = \left( -1 + \frac{300}{s}\right) \frac{dS}{dt} dt \\ 
-			& \Leftrightarrow \int\frac{dI}{dt}dt = \int\left(\frac{-1 + 300}{s}\right)\frac{dS}{dt}dt =
-			\int - \frac{ds}{dt}dt + \int\frac{300}{s}\frac{dS}{dt}dt \\
-			& \Leftrightarrow I(t) = -S(t) + 300 \times ln(S(t)) \\
+			& \frac{dI}{dS} = -1 + \frac{300}{s} \Leftrightarrow \\
+			& dI = \left(-1 + \frac{300}{s}\right)dS \Leftrightarrow \\
+			& \frac{dI}{dt} dt = \left( -1 + \frac{300}{s}\right) \frac{dS}{dt} dt \Leftrightarrow \\
+			& \int\frac{dI}{dt}dt = \int\left(\frac{-1 + 300}{s}\right)\frac{dS}{dt}dt = \int - \frac{ds}{dt}dt + \int\frac{300}{s}\frac{dS}{dt}dt \Leftrightarrow \\
+			& I(t) = -S(t) + 300 \times ln(S(t))
 		\end{split}
 		\end{equation}
 
+		\par
 		Expressando $I(t)$ em função de $S$, obtemos a equação pretendida:
-        $$I(S) = -S + 300\, ln S + c$$
+        $$I(S) = -S + 300ln~S + c$$
 
-		\vspace{5mm}
+		\par
 		Para chegar ao valor de c, impõem-se as condições iniciais $I(0) = 1$ e $S(0) = 799$:
 
 		\begin{equation}
 		\begin{split}
-		I(0) = -S(0) + 300 \times ln(S(0)) + c \Leftrightarrow & c = -799 +
-		300\,ln(799) - 1 \Leftrightarrow \\
-		c \approx -1205.008
+			& I(0) = -S(0) + 300 \times ln(S(0)) + c \Leftrightarrow \\
+			& c = -799 + 300ln(799) - 1 \Leftrightarrow \\
+			& c \approx -1205.008
 		\end{split}
 		\end{equation}
 
-
+		\par
 		O número máximo de crianças doentes num dado momento pode ser obtido
 		atráves do máximo de $I(S)$.
 		\begin{equation}
@@ -218,52 +217,61 @@
 		\end{split}
 		\end{equation}
 
-		A sua derivada tem um único zero em $S =
-		300$ \eqref{eq:root}, logo, sendo maior que 0 para valores inferiores a 300 e menor que
-		0 para valores superiores \eqref{eq:comp}.
-		Temos, portanto, um máximo de $I$ em $S = 300$ que corresponde ao número de
-		crianças suscetíveis quando o número de crianças infetadas é máximo.
+		\par
+		A derivada de $I(S)$ tem um único zero em $S = 300$ \eqref{eq:root},
+		e, como é maior que 0 para valores inferiores a 300 e menor que 0
+		para valores superiores a 300 \eqref{eq:comp}, então $I(S)$ tem um máximo
+		em $S = 300$ que corresponde ao número de crianças suscetíveis
+		quando o número de crianças infetadas é máximo.
+
+		\par
 		Substituindo na equação, obtemos:
 		\begin{equation}
-		I(300) = -300 + 300 \times ln(300) - 1205.008 \Leftrightarrow I(300) \approx 206
+			I(300) = -300 + 300 \times ln(300) - 1205.008 \approx 206
 		\end{equation}
 
-		\subsubsection{}
-		Em primeiro lugar, verifiquemos que o valor de $S$ para o qual $I(S) = 0$ é menor que 200.
+		\subsubsection{} \label{sec:III.2b)}
 		\par
-		Como demonstrado em \eqref{eq:comp} no intervalo $[-\infty, 300[/\{0\}$ a
-		função $\frac{dI}{dS}$ é diferente de zero. Como $]0, 200] \subset
-		[-\infty, 300]/\{0\}$, tambem nesse intervalo a função $\frac{dI}{dt}$
-		é diferente de zero. Nestas condições o Teorema de Rolle garante que no
-		intervalo $]0, 200]$ existirá no máximo uma raiz da função $I(S)$.
+		Em primeiro lugar, verifiquemos que o valor de $S$ para o qual $I(S) = 0$ é menor que 200.
+
+		\par
+		Como demonstrado em \eqref{eq:comp}, no intervalo
+		$[-\infty,300[~\setminus\{0\}$ a função $\frac{dI}{dS}$ é diferente de
+		zero. Como $]0,200] \subset [-\infty,300]~\setminus\{0\}$, também nesse
+		intervalo a função $\frac{dI}{dt}$ é diferente de zero. Nestas condições
+		o Teorema de Rolle garante que no intervalo $]0,200]$ existirá no máximo
+		uma raiz da função $I(S)$.
+
 		\par
 		Como $I(1) < 0$ e $I(200) > 0$ pelo Teorema de Bolzano garantimos a
 		existência de pelo menos uma raiz de $I(S)$ nesse intervalo.
+
 		\par
 		Pelas duas conclusões anteriores podemos deduzir a existência e
-		únicidade da raiz de $I(S)$ no intervalo $]0, 200]$.
+		unicidade da raiz de $I(S)$ no intervalo $]0, 200]$.
 
-		\vspace{5mm}
-		\par
+		\par \null \par
 		O fim da epidemia corresponde corresponde à raiz da função $I$ cuja
 		existência acabamos de provar. Essa raiz será igual ao número de
-		crianças não afetadas pela epidemia.
-		Para encontrar essa raiz iremos	interpolar a função inversa de $I$. \\
+		crianças não afetadas pela epidemia. Para encontrar essa raiz iremos
+		interpolar a função inversa de $I$.
+
 		\begin{equation}
 			I(S) = 0 \rightarrow S = I^{-1}(0)
 		\end{equation}
-		\par O seu cálculo pode ser simplificado
-		pela utilização da função \texttt{polyfit} do Octave.
-		Assim, escrevemos um pequeno script em Octave que permite rapidamente
-		encontrar a raiz da função $I$ utilizando a sua inversa. Esse script
-		pode ser encontrado na directoria \texttt{III/III\tu b.m} do código em
-		anexo a este relatório\footnote{Instruções de utilização podem ser
-		encontradas no código fonte.}
-		\par
-		A execução do \texttt{III\tu b} para o intervalo $[1, 200]$ com 1000
-		intervalos de interpolação para um polinómio de grau 3 retorna um valor
-		da raiz $\approx 73.899$.
 
+		\par
+		O seu cálculo pode ser simplificado pela utilização da função
+		\texttt{polyfit} do Octave.  Assim, escrevemos um pequeno script em
+		Octave que permite rapidamente encontrar a raiz da função $I$
+		utilizando a sua inversa. Esse script pode ser encontrado em
+		\texttt{III/III\tu b.m}. \footnote{Instruções de utilização podem ser
+		encontradas no código fonte.}
+
+		\par
+		A execução do script \texttt{III/III\tu b} para o intervalo $[1, 200]$
+		com 1000 intervalos de interpolação para um polinómio de grau 3 retorna
+		um valor da raiz $z \approx 73.899$.
 
 		%Se a epidemia acabar quando o número de crianças infetadas for 0,
 		%então, teremos que ver quantas crianças estão suscetíveis neste ponto,
@@ -294,10 +302,9 @@
 		%\par
 		%Depois de utilizarmos as duas funções, concluímos que $I^{-1}(0) = 70$.
 
-		\subsubsection{}
+		\subsubsection{} \label{sec:III.2c)}
 		\par
-
-		Utilizando a expressão $I(t) = -S(t) + 300 ln S(t) + c$ e substituindo
+		Utilizando a expressão $I(t) = -S(t) + 300ln~S(t) + c$ e substituindo
 		os $I$ pelo lado direito da equação, obteremos uma equação na forma de
 		um PVI\@. A partir daí podemos usar o método do ponto médio\footnote{A
 		implementação pode ser encontrada em \texttt{III/ponto\tu medio.m}}
@@ -305,16 +312,19 @@
 		= 0, $x_1$ = $x_0 + h$, \ldots $x_N= nh$ e desenhar o gráfico de acordo
 		com esses pontos.
 
+		\par
 		Para obtermos um gráfico para o número de pessoas infetadas ao longo do
-		tempo, usamos os nossos pontos já cálculados.
-		Como I pode ser escrito em função de S $\rightarrow$ I($x_i$) =
-		-S($x_i$) + 300 $\times$ ln(S($x_i$) - 1205.
+		tempo, usamos os nossos pontos já cálculados. Como $I$ pode ser escrito
+		em função de $S$, $I(x_i) = -S(x_i) + 300ln~S(x_i) - 1205$.
 
+		\par
 		Assim, para cada momento podemos saber uma aproximação do número de
 		pessoas infetadas, obtendo-se assim	o gráfico da função I(t).
 
-		Finalmente, para se conseguir fazer o gráfico de R foi necessário
-		dividir a 3ª equação pela primeira e integrar:
+		\par \null \par
+		Finalmente, para se conseguir o gráfico de $R$ foi necessário
+		dividir $\frac{dR}{dt}$ por $\frac{dS}{dt}$ e integrar:
+
 		\begin{equation}
 		\begin{split}
 			\frac{\frac{dR}{dt}}{\frac{dS}{dt}} = \frac{0.3 I}{-0.0001 S I}
@@ -336,33 +346,36 @@
 			R(t) = -300\, ln(S(t)) + 2005.008
 		\end{equation}
 
+		\par
+		Ficamos com uma relação entre $R(t)$ e $S(t)$. Como temos uma
+		aproximação para $S(t)$, é suficiente substituir as aproximações na
+		expressão obtida e, assim, obter uma aproximação para $R(t)$.
 
-		Ficamos com uma relação entre R(t) e S(t). Como temos aproximações para os S(t),
-		é-nos suficiente substituir as aproximações na expressão obtida e, assim, obter uma aproximação para R(t).
-
+		\par
 		Juntando os três gráficos:
 
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.80\linewidth]{IIIc_fitted}
 			\captionsetup{width=0.80\linewidth}
-			\caption[Caption]{Evolução das funções S, I, R ao longo do tempo
+			\caption[Caption]{Evolução das variáveis $S$, $I$, $R$ ao longo do
+			tempo.
 			\footnotemark}
 		\end{figure}
+		\footnotetext{O	código utilizado para gerar o gráfico pode ser
+		encontrado no ficheiro \texttt{III/c.m} em anexo.}
 
-		\footnotetext{O	código utilizado para gerar o grafico pode ser
-		encontrado na didetoria III/c.m dos anexos.}
-
+		\par
 		Relacionando o gráfico com o problema em questão, notamos que as aproximações feitas devem estar
 		bastante próximas do valor certo/real de cada função, pois os gráficos comportaram-se como esperado e cumpriram as respetivas propriedades.
-
 
 		%estou só a experimentar este itemize
 		\begin{itemize}
 		\item Como o limite superior de pessoas da amostra é 800, nenhuma função tem uma imagem acima de 800.
 		\item O valor máximo para o número de pessoas infetadas num dado momento é 206 e tal pode-se confirmar pelo gráfico.
-		\item Foi visto na pergunta $II.2-b)$ que o número de pessoas nunca infetadas é algo perto de 70. %verificar que é 70 certo ou nao...
-		No gráfico, pode observar-se que Quando I(t) = 0, S(t) $\approx$ 74 e que fica constante nesse valor a partir do instante em que I(t) = 0.
+		\item Foi visto na alínea b) que o número de pessoas
+		nunca infetadas é algo perto de 70. % TODO: verificar que é 70 certo ou nao...
+		No gráfico, pode observar-se que quando $I(t) = 0$, $S(t) \approx 74$ e que fica constante nesse valor a partir do instante em que $I(t) = 0$.
 		Faz todo o sentido ser constante a partir desse momento, porque quando
 		se recupera a última pessoa infetada, deixa de ser possivel contrair
 		varicela e a partir daí o número de pessoas suscetíveis, isto é, que
@@ -373,38 +386,50 @@
 		alterar.
 		\end{itemize}
 
+\newpage
 \section{Anexos}
-
-
 \subsection{I}
-	\par{I/1.m}
-	\lstinputlisting{../src/I/1.m}
-	\par{I/2\tu i.m}
-	\lstinputlisting{../src/I/2_i.m}
-	\par{I/2\tu ii.m}
-	\lstinputlisting{../src/I/2_ii.m}
-	\par{I/2\tu ii.m}
-	\lstinputlisting{../src/I/2_ii.m}
-	\par{I/2.m}
-	\lstinputlisting{../src/I/2.m}
-	\par{I/min\tu quad.m}
+	\texttt{I/min\tu quad.m}
 	\lstinputlisting{../src/I/min_quad.m}
+
+	\texttt{I/1.m}
+	\lstinputlisting{../src/I/1.m}
+
+	\texttt{I/2\tu i.m}
+	\lstinputlisting{../src/I/2_i.m}
+
+	\texttt{I/2\tu ii.m}
+	\lstinputlisting{../src/I/2_ii.m}
+
+	\texttt{I/2\tu iii.m}
+	\lstinputlisting{../src/I/2_iii.m}
+
+	\texttt{I/2.m}
+	\lstinputlisting{../src/I/2.m}
+
+\newpage
 \subsection{II}
-	\par{II/1.m}
-	\lstinputlisting{../src/II/1.m}
-	\par{II/2.m}
-	\lstinputlisting{../src/II/2.m}
-	\par{II/ex1.m}
-	\lstinputlisting{../src/II/ex1.m}
-	\par{II/simpson.m}
+	\texttt{II/simpson.m}
 	\lstinputlisting{../src/II/simpson.m}
+
+	\texttt{II/1.m}
+	\lstinputlisting{../src/II/1.m}
+
+	\texttt{II/2.m}
+	\lstinputlisting{../src/II/2.m}
+
+\newpage
 \subsection{III}
-	\par{III/c.m}
+	\texttt{III/c.m}
 	\lstinputlisting{../src/III/c.m}
-	\par{III/III\tu b.m}
+
+	\texttt{III/III\tu b.m}
 	\lstinputlisting{../src/III/III_b.m}
-	\par{III/ponto\tu medio.m}
+
+	\texttt{III/ponto\tu medio.m}
 	\lstinputlisting{../src/III/ponto_medio.m}
-	\par{III/f.m}
+
+	\texttt{III/f.m}
 	\lstinputlisting{../src/III/f.m}
+
 \end{document}

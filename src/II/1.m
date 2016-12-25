@@ -1,10 +1,10 @@
-%II.1.- Regra de Simpson composta.
+% II.1.- Regra de Simpson composta.
 %
-%É necessário ajustar os parâmetros de entrada:
-%	- a: ponto inicial
-%	- b: ponto final
-%	- N: o número de subintervalos no intervalo [a, b]
-%	- A função a integrar
+% É necessário ajustar os parâmetros de entrada:
+% 	- a: ponto inicial
+% 	- b: ponto final
+% 	- N: o número de subintervalos no intervalo [a, b]
+% 	- A função a integrar
 
 format long;
 

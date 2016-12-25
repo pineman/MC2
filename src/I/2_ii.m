@@ -1,4 +1,4 @@
-%I.2.- ii) Aproximação quadrática pelo método clássico.
+% I.2.- ii) Aproximação quadrática pelo método clássico.
 
 % Definição das m funções de base: parábola.
 function y = phi1(x)

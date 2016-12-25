@@ -1,4 +1,4 @@
-%I.2.- i) Aproximação linear pelo critério clássico.
+% I.2.- i) Aproximação linear pelo critério clássico.
 
 % Definição das m funções de base: reta linear.
 function y = phi1(x)

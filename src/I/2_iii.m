@@ -1,4 +1,4 @@
-%I.2.- iii) Aproximação linear pelo critério dos mínimos quadrados ponderados.
+% I.2.- iii) Aproximação linear pelo critério dos mínimos quadrados ponderados.
 
 % Definição das m funções de base: reta.
 function y = phi1(x)
