@@ -175,19 +175,14 @@
 		Dividindo $\frac{dI}{dt}$ por $\frac{dS}{dt}$, obtemos:
 
 		% completar as Equações
-		\begin{equation} \label{di}
+		\begin{equation}
 		\begin{split}
-			& \frac{dI}{dS} = -1 + \frac{300}{s} \Leftrightarrow \\
-			& dI = \left(-1 + \frac{300}{s}\right)dS \Leftrightarrow \\
-			& \frac{dI}{dt} dt = \left( -1 + \frac{300}{s}\right) \frac{dS}{dt} dt \Leftrightarrow \\
-			& \int\frac{dI}{dt}dt = \int\left(\frac{-1 + 300}{s}\right)\frac{dS}{dt}dt = \int - \frac{ds}{dt}dt + \int\frac{300}{s}\frac{dS}{dt}dt \Leftrightarrow \\
-			& I(t) = -S(t) + 300 \times ln(S(t))
+			& \frac{dI}{dS} = -1 + \frac{300}{S} \Leftrightarrow \\
+			& dI = \left(-1 + \frac{300}{S}\right)dS \Leftrightarrow \\
+			& \int dI = \int\left(-1 + \frac{300}{S}\right)dS \Leftrightarrow \\
+			& I = -S + 300ln~S + c
 		\end{split}
 		\end{equation}
-
-		\par
-		Expressando $I(t)$ em função de $S$, obtemos a equação pretendida:
-        $$I(S) = -S + 300ln~S + c$$
 
 		\par
 		Para chegar ao valor de c, impõem-se as condições iniciais $I(0) = 1$ e $S(0) = 799$:
