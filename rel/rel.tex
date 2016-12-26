@@ -32,6 +32,7 @@
 \newcommand\showdiv[1]{\overline{\smash{\hstretch{.5}{)}\mkern-3.2mu\hstretch{.5}{)}}#1}}
 \newcommand\ph[1]{\textcolor{white}{#1}}
 \newcommand\tu[0]{\textunderscore}
+\newcommand\eq[0]{\Leftrightarrow}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -95,6 +96,9 @@
 \newpage
 
 \section{} \label{sec:I}
+	\par
+	Todos os ficheiros de código encontram-se em anexo no final deste relatório. Os mesmos devem ser corridos no programa \emph{Octave}.
+
 	\subsection{} \label{sec:I.1}
 	\par
 	Resposta no ficheiro \texttt{I/min\tu quad.m}, corrido pelo \emph{script} \texttt{I/1.m}, onde é possível alterar os pontos tabelados, os respetivos pesos e as funções de base.
@@ -114,14 +118,13 @@
 	\end{table}
 
 	\par
-	Foram obtidas as três funções aproximadoras pedidas, através da função
-	desenvolvida em \ref{sec:I.1}, pelos ficheiros \texttt{I/2\tu i.m}, \texttt{I/2\tu ii.m} e \texttt{I/2\tu iii.m}, corridos no \emph{script} \texttt{I/2.m}.
+	Foram obtidas as três funções aproximadoras pedidas, através da função desenvolvida em \ref{sec:I.1}, pelos ficheiros \texttt{I/2\tu i.m}, \texttt{I/2\tu ii.m} e \texttt{I/2\tu iii.m}. Estes três ficheiros são corridos no \emph{script} \texttt{I/2.m}, onde as três funções aproximadoras resultantes são aplicadas aos pontos tabulados e são ainda desenhados os gráficos resultantes, assim como os pontos tabulados.
 
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.80\linewidth]{I_fino}
 		\captionsetup{width=0.80\linewidth}
-		\caption{Diferentes funções aproximadoras dos pontos tabelados pelo critério dos mínimos quadrados clássico e ponderado.}
+		\caption{Diferentes funções aproximadoras dos pontos tabelados, pelos critérios dos mínimos quadrados clássico e ponderado.}
 	\end{figure}
 
 \newpage
@@ -156,11 +159,25 @@
 			512	& 1480.56847921284	& 0.00000086931		& 16.04897985126	\\ \hline
 		\end{tabular}
 		\caption{Comparação dos erros da regra de Simpson para vários valores de N.}
+		\label{tab:simp}
 	\end{table}
+	\par
+	O erro da fórmula de Simpson composta com $N$ subintervalos é dado por:
+	$$E_N^S(f) = -\frac{(b - a)h^4}{180}f^{(4)}(\xi), \xi \in [a,b]$$
 
-	% TODO: comentar os erros
-	% a majoração do erro depende de N quarticamente, por isso,
-	% se N duplicar, o erro cai para 1/16.
+	\par
+	Dividindo $E_{N/2}^S(f)$ por $E_N^S(f)$ e como $h = \frac{(b - a)}{N}$, obtém-se:
+
+	% > muh explicit
+	% > muh TeX
+	$$\frac{E_{N/2}^S(f)}{E_N^S(f)} =
+	\frac{\frac{(b - a)^5}{180}\frac{1}{(\frac{N}{2})^4}f^{(4)}(\xi)}
+		 {\frac{(b - a)^5}{180}\frac{1}{N^4}f^{(4)}(\xi)} =
+	\frac{\frac{1}{\frac{N^4}{16}}}{\frac{1}{N^4}} = \frac{N^4}{\frac{N^4}{16}} =
+	16\frac{N^4}{N^4} = 16$$
+
+	\par
+	Assim, teoricamente, esperamos que quando se duplica o número de subintervalos, o erro da fórmula de Simpson composta caia 16 vezes. Tal é verificado pela quarta coluna da Tabela \ref{tab:simp} quando $N$ tende para infinito ou, na prática, para um número suficientemente grande para garantir uma boa aproximação pela regra de Simpson. O rácio não é sempre igual a 16 por causa das primeiras aproximações para $N$ pequenos serem demasiado grosseiras.
 
 \section{} \label{sec:III}
 	\subsection{} \label{sec:III.1}
@@ -171,7 +188,7 @@
 
 	\subsection{} \label{sec:III.2}
 		\subsubsection{} \label{sec:III.2a)}
-		\par %III- 2
+		\par
 		Dividindo $\frac{dI}{dt}$ por $\frac{dS}{dt}$, obtemos:
 
 		% completar as Equações
@@ -189,8 +206,8 @@
 
 		\begin{equation}
 		\begin{split}
-			& I(0) = -S(0) + 300 \times ln(S(0)) + c \Leftrightarrow \\
-			& c = -799 + 300ln(799) - 1 \Leftrightarrow \\
+			& I(0) = -S(0) + 300 \times ln(S(0)) + c \eq \\
+			& c = -799 + 300ln(799) - 1 \eq \\
 			& c \approx -1205.008
 		\end{split}
 		\end{equation}
@@ -200,15 +217,15 @@
 		atráves do máximo de $I(S)$.
 		\begin{equation}
 			\label{eq:root}
-			\frac{dI}{dS} = 0 \Leftrightarrow -1 + \frac{300}{S} = 0
-			\Leftrightarrow S = 300
+			\frac{dI}{dS} = 0 \eq -1 + \frac{300}{S} = 0
+			\eq S = 300
 		\end{equation}
 
 		\begin{equation}
 		\begin{split}
 			\label{eq:comp}
-			 -1 + \frac{300}{S} > 0 \Leftrightarrow S < 300 \\
-			 -1 + \frac{300}{S} < 0 \Leftrightarrow S > 300
+			 -1 + \frac{300}{S} > 0 \eq S < 300 \\
+			 -1 + \frac{300}{S} < 0 \eq S > 300
 		\end{split}
 		\end{equation}
 
@@ -323,17 +340,17 @@
 		\begin{equation}
 		\begin{split}
 			\frac{\frac{dR}{dt}}{\frac{dS}{dt}} = \frac{0.3 I}{-0.0001 S I}
-			\Leftrightarrow
-			\frac{dR}{dS} = &-\frac{300}{s} \Leftrightarrow dR =
+			\eq
+			\frac{dR}{dS} = &-\frac{300}{s} \eq dR =
 			-\frac{300}{s} dS
 			\int \frac{dR}{dt}dt = \int -\frac{300}{s} \frac{dS}{dt}dt
-			\Leftrightarrow \\ \newline
+			\eq \\ \newline
 			& R(t) = -300 ln(S(t)) + c
 		\end{split}
 		\end{equation}
 
 		\begin{equation}
-			0 = -300 ln(799) + c \Leftrightarrow \\
+			0 = -300 ln(799) + c \eq \\
 			c = 2005.008 \\
 		\end{equation}
 
